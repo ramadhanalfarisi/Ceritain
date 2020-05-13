@@ -22,43 +22,41 @@ class KomponenEvaluasi extends Component {
     }
     return (
       <ImageBackground source={currentBack} style={styles.container}>
-        <LinearGradient
-          colors={['#56AB2F', '#A8E063']}
+        <View
           style={{
-            height: '60%',
-            width: '60%',
-            borderRadius: 20,
+            height: '30%',
+            width: '85%',
+            borderRadius: 10,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#2c3e50',
+            backgroundColor: '#fff',
+            elevation: 1
           }}>
           <Text
             style={{
-              fontSize: 16,
+              fontSize: 20,
               fontWeight: 'bold',
-              color: '#fff',
+              color: '#575757',
             }}>
-            Nilai Kamu
+            SELAMAT !!
+          </Text>
+          <Text
+            style={{
+              fontSize: 16, 
+              color: '#575757',
+            }}>
+            KAMU MENDAPAT NILAI
           </Text>
           <Text
             style={{
               fontSize: 70,
               fontWeight: 'bold',
-              color: '#fff',
+              color: '#575757',
             }}>
             {this.props.route.params.score}
           </Text>
-          <Text
-            style={{
-              fontSize: 16,
-              fontWeight: 'bold',
-              color: '#fff',
-            }}>
-            {this.props.route.params.score == 100
-              ? 'Kamu Hebat !'
-              : 'Tetap Semangat Ya !'}
-          </Text>
-        </LinearGradient>
+          
+        </View>
       </ImageBackground>
     );
   }
@@ -68,8 +66,8 @@ class KomponenEvaluasi extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 170,
-    alignItems: 'center',
+    alignItems:'center',
+    justifyContent:'center',
   },
 });
 

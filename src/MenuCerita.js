@@ -131,7 +131,9 @@ class MenuCerita extends Component {
                 data={this.state.cerita}
                 renderItem={(item) => {
                   return (
-                    <TouchableOpacity onPress={() => this.baca(item.item.tags)} style={{marginBottom:10}}>
+                    <TouchableOpacity
+                      onPress={() => this.baca(item.item.tags)}
+                      style={{marginBottom: 10}}>
                       <View
                         style={{
                           height: 110,
@@ -139,6 +141,7 @@ class MenuCerita extends Component {
                           borderRadius: 10,
                           marginTop: 15,
                           flexDirection: 'row',
+                          elevation: 1
                         }}>
                         <View
                           style={{alignItems: 'center', paddingVertical: 10}}>
@@ -172,12 +175,27 @@ class MenuCerita extends Component {
                         </View>
                       </View>
                       <View
-                        style={{position: 'absolute', alignSelf: 'flex-end', bottom: -10, paddingRight:10}}>
-                        <Icon
-                          name="arrow-circle-right"
-                          size={30}
-                          color="#A8E063"
-                        />
+                        style={{
+                          position: 'absolute',
+                          alignSelf: 'flex-end',
+                          bottom: -10,
+                          paddingRight: 10,
+                        }}>
+                        <View
+                          style={{
+                            height: 35,
+                            width: 35,
+                            borderRadius: 40,
+                            backgroundColor: '#A8E063',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            elevation: 1
+                          }}>
+                          <Image
+                            source={require('../assets/arrow-home.png')}
+                            style={{width: 15, height: 15}}
+                          />
+                        </View>
                       </View>
                     </TouchableOpacity>
                   );
@@ -195,6 +213,7 @@ class MenuCerita extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:'#F0F1F1',
   },
 });
 

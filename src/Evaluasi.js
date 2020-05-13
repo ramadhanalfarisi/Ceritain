@@ -823,11 +823,12 @@ class Evaluasi extends Component {
 
   notif(status) {
     let total = this.state.score;
-    if (status === true) {
-      this.setState({score: total + 20});
-    }
-    ToastAndroid.show('Jawaban Tersimpan !', ToastAndroid.SHORT);
     this.scrolling();
+    setTimeout(() => {
+      if (status === true) {
+        this.setState({score: total + 20});
+      }
+    },10);
   }
 
   notifTerakhir(status, judul) {
@@ -862,17 +863,6 @@ class Evaluasi extends Component {
     }
     return (
       <ImageBackground source={currentQuiz.back} style={styles.container}>
-        <View style={{alignItems: 'center', paddingTop: 30}}>
-          <Text
-            style={{
-              fontSize: 18,
-              color: '#fff',
-              fontWeight: '600',
-              flexWrap: 'wrap',
-            }}>
-            {judul}
-          </Text>
-        </View>
         <View style={{paddingTop: 25, alignItems: 'center'}}>
           <ScrollView
             horizontal
@@ -889,7 +879,7 @@ class Evaluasi extends Component {
                   <View style={{paddingHorizontal: 25}}>
                     <View
                       style={{
-                        height: '90%',
+                        height: '100%',
                         width: WIDTH - 50,
                         borderRadius: 10,
                         paddingVertical: 25,
@@ -905,7 +895,7 @@ class Evaluasi extends Component {
                           }}>
                           <Text
                             style={{
-                              color: '#fff',
+                              color: '#575757',
                               fontSize: 20,
                               fontWeight: 'bold',
                               textAlign: 'center',
@@ -932,20 +922,22 @@ class Evaluasi extends Component {
                                     height: 50,
                                     marginTop: 10,
                                     flexDirection: 'row',
+                                    
                                   }}>
                                   <View
                                     style={{
                                       width: '15%',
                                       height: '100%',
-                                      backgroundColor: '#000',
+                                      backgroundColor: '#A8E063',
                                       justifyContent: 'center',
-                                      borderTopLeftRadius: 5,
-                                      borderBottomLeftRadius: 5,
+                                      borderTopLeftRadius: 10,
+                                      borderBottomLeftRadius: 10,
+                                      elevation: 1
                                     }}>
                                     <Text
                                       style={{
                                         color: '#fff',
-                                        fontSize: 18,
+                                        fontSize: 20,
                                         fontWeight: 'bold',
                                         textAlign: 'center',
                                       }}>
@@ -958,18 +950,19 @@ class Evaluasi extends Component {
                                       height: '100%',
                                       backgroundColor: '#fff',
                                       justifyContent: 'center',
-                                      borderTopRightRadius: 5,
-                                      borderBottomRightRadius: 5,
+                                      borderTopRightRadius: 10,
+                                      borderBottomRightRadius: 10,
                                       paddingHorizontal: 5,
+                                      elevation: 1
                                     }}>
                                     <Text
                                       style={{
-                                        color: '#000',
-                                        fontSize: 15,
+                                        color: '#575757',
+                                        fontSize: 12,
                                         fontWeight: 'bold',
                                         textAlign: 'center',
                                       }}>
-                                      {item2.item.content}
+                                      {item2.item.content.toUpperCase()}
                                     </Text>
                                   </View>
                                 </View>
@@ -986,7 +979,7 @@ class Evaluasi extends Component {
                   <View style={{paddingHorizontal: 25}}>
                     <View
                       style={{
-                        height: '90%',
+                        height: '100%',
                         width: WIDTH - 50,
                         borderRadius: 10,
                         paddingVertical: 25,
@@ -1002,7 +995,7 @@ class Evaluasi extends Component {
                           }}>
                           <Text
                             style={{
-                              color: '#fff',
+                              color: '#575757',
                               fontSize: 20,
                               fontWeight: 'bold',
                               textAlign: 'center',
@@ -1022,7 +1015,9 @@ class Evaluasi extends Component {
                           renderItem={(item2) => {
                             return (
                               <TouchableOpacity
-                                onPress={() => this.notifTerakhir(item2.item.jawaban,judul)}>
+                                onPress={() =>
+                                  this.notifTerakhir(item2.item.jawaban, judul)
+                                }>
                                 <View
                                   style={{
                                     width: '100%',
@@ -1034,15 +1029,16 @@ class Evaluasi extends Component {
                                     style={{
                                       width: '15%',
                                       height: '100%',
-                                      backgroundColor: '#000',
+                                      backgroundColor: '#A8E063',
                                       justifyContent: 'center',
-                                      borderTopLeftRadius: 5,
-                                      borderBottomLeftRadius: 5,
+                                      borderTopLeftRadius: 10,
+                                      borderBottomLeftRadius: 10,
+                                      elevation: 1
                                     }}>
                                     <Text
                                       style={{
                                         color: '#fff',
-                                        fontSize: 18,
+                                        fontSize: 20,
                                         fontWeight: 'bold',
                                         textAlign: 'center',
                                       }}>
@@ -1055,18 +1051,19 @@ class Evaluasi extends Component {
                                       height: '100%',
                                       backgroundColor: '#fff',
                                       justifyContent: 'center',
-                                      borderTopRightRadius: 5,
-                                      borderBottomRightRadius: 5,
+                                      borderTopRightRadius: 10,
+                                      borderBottomRightRadius: 10,
                                       paddingHorizontal: 5,
+                                      elevation: 1
                                     }}>
                                     <Text
                                       style={{
-                                        color: '#000',
-                                        fontSize: 15,
+                                        color: '#575757',
+                                        fontSize: 12,
                                         fontWeight: 'bold',
                                         textAlign: 'center',
                                       }}>
-                                      {item2.item.content}
+                                      {item2.item.content.toUpperCase()}
                                     </Text>
                                   </View>
                                 </View>
